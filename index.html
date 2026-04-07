@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Welcome Back!</h1>
+      <p>Please log in to your account</p>
+      
+      <form id="loginForm" action="#" method="POST" novalidate>
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="options">
+          <label>
+            <input type="checkbox" name="remember"> Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <div class="signup-link">
+          <p>Don't have an account? <a href="REGISTRATION.HTML">Register</a></p> 
+        </div>
+
+        <div class="button-style">
+          <div id="loginError" role="alert" aria-live="polite" style="color:#c72; margin-bottom:10px; display:none;"></div>
+          <button type="submit" class="login-btn">Login</button>
+          <button type="reset" class="login-btn small" style="margin-top:8px; background:#f0f0f0; color:#333; box-shadow:none;">Cancel</button>
+        </div>
+      </form>
+
+      <script>
+        (function () {
+          const form = document.getElementById('loginForm');
+          const username = document.getElementById('username');
+          const password = document.getElementById('password');
+          const errorEl = document.getElementById('loginError');
+
+          function showError(msg) {
+            errorEl.textContent = msg;
+            errorEl.style.display = 'block';
+          }
+
+          function clearError() {
+            errorEl.textContent = '';
+            errorEl.style.display = 'none';
+          }
+
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            clearError();
+
+            const userVal = (username.value || '').trim();
+            const passVal = (password.value || '');
+
+            if (userVal === 'admin' && passVal === 'admin') {
+              window.location.href = 'HOMEPAGE.HTML';
+            } else {
+              showError('Incorrect username or password.');
+              password.value = '';
+              password.focus();
+            }
+          });
+
+          username.addEventListener('input', clearError);
+          password.addEventListener('input', clearError);
+        })();
+      </script>
+    </div>
+  </div>
+</body>
+</html>

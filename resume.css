@@ -1,0 +1,99 @@
+
+    body { 
+        font-family: Arial, Helvetica, sans-serif; 
+        margin: 24px;
+        line-height: 1.35;
+        background: whitesmoke;
+        color: dark gray;
+    }
+    .top { 
+        display: table; 
+        width: 100%; 
+    }
+    .left, .right { 
+        display: table-cell;
+        vertical-align: middle; 
+    }
+    .right { 
+        width: 120px; 
+        text-align: right;
+     }
+    img.photo {
+         width: 110px; 
+         height: 110px; 
+         object-fit: cover;
+        border-radius: 6px;
+         }
+
+    h1 {
+         font-size: 22px; 
+         margin: 0 0 6px;
+          letter-spacing: .5px;
+         }
+
+    .muted {
+         color: rgb(88, 85, 85); 
+         margin: 2px 0;
+         }
+    hr {
+        font: optional;
+         border: 0;
+          border-top: 1px solid rgb(18, 16, 16);
+           margin: 16px 0;
+         }
+         
+    h2 { 
+        font-size: 14px;
+         text-transform: uppercase;
+          letter-spacing: .8px;
+           margin: 18px 0 6px;
+         }
+
+    ul {
+         margin: 6px 0 10px 20px; 
+        }
+
+    table.two-col {
+         width: 100%;
+          border-collapse: collapse;
+         }
+
+    table.two-col td {
+         vertical-align: top;
+          width: 50%; 
+          padding-right: 16px; 
+        }
+
+    .label {
+         font-weight: bold;
+         }
+
+    .edu-table { 
+        width: 100%;
+         border-collapse: collapse; 
+        }
+
+    .edu-table th, .edu-table td { 
+        padding: 6px 4px; 
+    }
+
+    .edu-table th { 
+        text-align: left;
+     }
+
+    .refs li { 
+        margin-bottom: 8px; 
+    }
+    
+    @media (max-width: 640px) 
+    {
+      .left, .right { display: block; width: 100%; text-align: left; }
+      .right { margin-top: 8px; }
+      table.two-col td { display: block; width: 100%; padding-right: 0; }
+    }
+  
+
+
+
+
+    

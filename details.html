@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Details</title>
+<link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+<div id="details"></div>
+
+<script>
+
+let p = JSON.parse(localStorage.getItem("selectedProduct"));
+
+document.getElementById("details").innerHTML = `
+  <div class="details-wrapper">
+    <img src="${p.img}" class="details-img">
+
+    <div class="details-info">
+      <h2>${p.name}</h2>
+      <div class="price-big">₱${p.price}</div>
+      <div class="sold">${p.sold}</div>
+      <p class="desc">${p.desc}</p>
+
+      <button class="add-cart-btn" onclick="addToCart()">Add to Cart</button>
+      <br><br>
+      <a href="PRODUCTS.html" class="back-btn">← Back to products</a>
+    </div>
+  </div>
+`;
+
+function addToCart() {
+  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  cart.push(p);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location.href = "CART.html";
+}
+</script>
+
+</body>
+</html>

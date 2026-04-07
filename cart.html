@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Cart</title>
+<link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+<h1 style="text-align:center;">🛒 HYL Shopping Cart</h1>
+
+<div id="cart-list"></div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+document.getElementById("cart-list").innerHTML =
+  cart.length === 0
+  ? "<p style='text-align:center;'>Your cart is empty.</p>"
+  : cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.img}" class="cart-img">
+        <div>
+          <h3>${item.name}</h3>
+          <p class="price">₱${item.price}</p>
+        </div>
+        
+      </div>
+    `).join("");
+   
+
+</script>
+ <a href="PRODUCTS.HTML" class="bck-btn">Continue Shopping</a>
+</body>
+</html>
